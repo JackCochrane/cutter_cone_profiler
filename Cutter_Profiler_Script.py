@@ -33,7 +33,6 @@ def depths_given_path_width (path_width):
     if path_width < min(CUTTER_LIST):
         return print("The selected path width is impossible with the current cutter list, please update the list or increase path width.\n")
     
-    
     virtual_depth = (path_width/2)/np.tan(CUTTER_ANGLE) #Depth needed for a 0.000 cutter
     actual_depths = virtual_depth - (np.array(CUTTER_LIST)/2)/np.tan(CUTTER_ANGLE) #Difference of the virtual depth and the diff of the cutter and a 0.000 cutter
     
@@ -47,12 +46,8 @@ def depths_given_path_width (path_width):
     for cutter, depth in valid_combinations[:-1]:
         print(f"{cutter:.3f} cutter with a depth of {depth:.3f}in. or a ", end='')
             
-    print(f"{valid_combinations[-1][0]:.3f} cutter with a depth of {valid_combinations[-1][1]:.3f}in.")
-        
-
-    
-    
-    
+    print(f"{valid_combinations[-1][0]:.3f} cutter with a depth of {valid_combinations[-1][1]:.3f}in.\n")
+           
 done = False
 
 while not done:
